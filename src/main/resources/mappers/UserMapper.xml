@@ -1,0 +1,11 @@
+<mapper namespace="cn.mikesolar.oj.Mappers.UserMapper">
+    <select id="getUserByName" resultType="cn.mikesolar.oj.Entity.UserPo">
+        SELECT * FROM users WHERE username = #{username}
+    </select>
+    <select id="getUserByPhoneNumber" resultType="cn.mikesolar.oj.Entity.UserPo">
+        SELECT * FROM users WHERE phone_number = #{phoneNumber}
+    </select>
+    <delete id="cleanupUser">
+        DELETE FROM users where is_deleted = true;
+    </delete>
+</mapper>
